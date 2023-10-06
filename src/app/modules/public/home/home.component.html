@@ -1,0 +1,14 @@
+<div class="container">
+  <nav>
+    <ul>
+      <li
+        *ngFor="let country of countryList"
+        [id]="country.toLowerCase() + 'Select'"
+      >
+        <a href="#">{{ country }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <app-leaderboard></app-leaderboard>
+</div>
