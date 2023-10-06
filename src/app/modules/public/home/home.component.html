@@ -4,11 +4,12 @@
       <li
         *ngFor="let country of countryList"
         [id]="country.toLowerCase() + 'Select'"
+        (click)="fetchStandings()"
       >
-        <a href="#">{{ country }}</a>
+        <a href="#">{{ country }} </a>
       </li>
     </ul>
   </nav>
 
-  <app-leaderboard></app-leaderboard>
+  <app-leaderboard *ngIf="teamList" [teams]="teamList"></app-leaderboard>
 </div>

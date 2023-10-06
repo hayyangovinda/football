@@ -7,6 +7,7 @@ import { LeaderboardModule } from './modules/lazy-load/leaderboard/leaderboard.m
 import { TeamHistoryModule } from './modules/lazy-load/team-history/team-history.module';
 import { MaterialModule } from './modules/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamHistoryModule,
     MaterialModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
