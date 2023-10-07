@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FootballApiService } from 'src/app/Services/football-api.service';
+import { FootballApiService } from 'src/app/services/football-api.service';
 import { StandingResponse } from 'src/app/models/standing-response';
 
 @Component({
@@ -9,19 +9,29 @@ import { StandingResponse } from 'src/app/models/standing-response';
 })
 export class HomeComponent {
   countryList = ['England', 'Spain', 'Germany', 'France', 'Italy'];
-
+  selectedCountryId!: number;
+  teamIds: { [key: string]: number } = {
+    England: 39,
+    Spain: 140,
+    Germany: 78,
+    France: 61,
+    Italy: 135,
+  };
   teamList!: [];
 
-  apiResp!: StandingResponse | any;
+  apiResp!: StandingResponse;
 
   constructor(private footballapi: FootballApiService) {}
 
-  fetchStandings() {
-    this.footballapi.getStandings().subscribe((resp) => {
-      this.apiResp = resp;
-      console.log(this.apiResp.response[0].league.standings);
+  fetchStandings(country: string) {
+    this.selectedCountryId = this.teamIds[country];
+    this.footballapi
+      .getStandings(this.selectedCountryId.toString())
+      .subscribe((resp) => {
+        this.apiResp = resp;
+        console.log(this.apiResp.response[0].league.standings);
 
-      this.teamList = this.apiResp.response[0].league.standings[0];
-    });
+        this.teamList = this.apiResp.response[0].league.standings[0];
+      });
   }
 }

@@ -2,9 +2,10 @@
   <nav>
     <ul>
       <li
+        #{{country}}
         *ngFor="let country of countryList"
         [id]="country.toLowerCase() + 'Select'"
-        (click)="fetchStandings()"
+        (click)="fetchStandings(country)"
       >
         <a href="#">{{ country }} </a>
       </li>
