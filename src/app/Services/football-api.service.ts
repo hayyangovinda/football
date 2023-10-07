@@ -7,18 +7,33 @@ import { StandingResponse } from '../models/standing-response';
   providedIn: 'root',
 })
 export class FootballApiService {
-  private apiUrl =
+  private apiStandingsUrl =
     'https://v3.football.api-sports.io/standings?season=2023&league=';
   private apiKey = '2da8a644f3d5df28aa622e1eb868445f';
 
+  private apiFixturesUrl =
+    'https://v3.football.api-sports.io/standings?season=2023&last=10';
+  private headers = {
+    headers: new HttpHeaders({
+      'x-rapidapi-host': 'v3.football.api-sports.io',
+      'x-rapidapi-key': this.apiKey,
+    }),
+  };
   constructor(private http: HttpClient) {}
 
   getStandings(teamId: string): Observable<StandingResponse> {
-    const headers = new HttpHeaders({
-      'x-rapidapi-host': 'v3.football.api-sports.io',
-      'x-rapidapi-key': this.apiKey,
-    });
+    return this.http.get<StandingResponse>(
+      this.apiStandingsUrl + teamId,
+      this.headers
+    );
+  }
 
-    return this.http.get<StandingResponse>(this.apiUrl + teamId, { headers });
+  getLastFixtures(
+    leagueId: string,
+    teamId: string
+  ): Observable<StandingResponse> {
+    return this.http.get<StandingResponse>(
+      this.apiFixturesUrl + `league=${leagueId}&team=${teamId} `
+    );
   }
 }

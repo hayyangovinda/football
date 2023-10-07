@@ -1,0 +1,22 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(214, 66, 66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-card {
+  background-color: white;
+  width: 60%;
+  min-height: 500px;
+  border-radius: 15px;
+}
+
+.line-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+}

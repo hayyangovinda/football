@@ -21,11 +21,11 @@ export class HomeComponent {
 
   apiResp!: StandingResponse;
 
-  constructor(private footballapi: FootballApiService) {}
+  constructor(private footballApiService: FootballApiService) {}
 
   fetchStandings(country: string) {
     this.selectedCountryId = this.teamIds[country];
-    this.footballapi
+    this.footballApiService
       .getStandings(this.selectedCountryId.toString())
       .subscribe((resp) => {
         this.apiResp = resp;
