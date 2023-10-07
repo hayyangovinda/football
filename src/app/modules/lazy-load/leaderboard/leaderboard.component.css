@@ -1,4 +1,7 @@
 .content-table {
+  position: absolute;
+  top: 20%;
+  left: 35%;
   border-collapse: collapse;
   margin: 25px;
   font-size: 15px;

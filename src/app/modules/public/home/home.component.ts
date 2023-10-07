@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FootballApiService } from 'src/app/services/football-api.service';
 import { StandingResponse } from 'src/app/models/standing-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -21,17 +21,11 @@ export class HomeComponent {
 
   apiResp!: StandingResponse;
 
-  constructor(private footballApiService: FootballApiService) {}
+  constructor(private router: Router) {}
 
-  fetchStandings(country: string) {
+  goToLeaderboard(country: string) {
     this.selectedCountryId = this.teamIds[country];
-    this.footballApiService
-      .getStandings(this.selectedCountryId.toString())
-      .subscribe((resp) => {
-        this.apiResp = resp;
-        console.log(this.apiResp.response[0].league.standings);
-
-        this.teamList = this.apiResp.response[0].league.standings[0];
-      });
+    console.log({ country });
+    this.router.navigate(['/leaderboard', this.selectedCountryId]);
   }
 }

@@ -5,12 +5,13 @@
         #{{country}}
         *ngFor="let country of countryList"
         [id]="country.toLowerCase() + 'Select'"
-        (click)="fetchStandings(country)"
       >
-        <a href="#">{{ country }} </a>
+        <a (click)="goToLeaderboard(country)">{{ country }} </a>
       </li>
     </ul>
   </nav>
 
-  <app-leaderboard *ngIf="teamList" [teams]="teamList"></app-leaderboard>
+  <!-- <app-leaderboard *ngIf="teamList" ></app-leaderboard> -->
+
+  <router-outlet></router-outlet>
 </div>
