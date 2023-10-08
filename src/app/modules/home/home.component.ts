@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StandingResponse } from 'src/app/models/standing-response';
+import { StandingResponse } from 'src/app/models/interfaces';
 import { Router } from '@angular/router';
 
 @Component({

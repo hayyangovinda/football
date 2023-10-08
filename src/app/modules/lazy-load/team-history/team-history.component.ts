@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {
-  FixtureResponse,
-  StandingResponse,
-} from 'src/app/models/standing-response';
+import { FixtureResponse, StandingResponse } from 'src/app/models/interfaces';
 import { FootballApiService } from 'src/app/services/football-api.service';
 
 @Component({
@@ -17,7 +14,7 @@ export class TeamHistoryComponent implements OnInit {
     private footballApiService: FootballApiService,
     private router: Router
   ) {}
-  apiResponse!: StandingResponse;
+
   last10Fixtures!: FixtureResponse;
   countryId!: number;
 
@@ -27,6 +24,7 @@ export class TeamHistoryComponent implements OnInit {
       this.countryId = params['id2'];
       this.footballApiService.getLastFixtures(teamId).subscribe((resp) => {
         this.last10Fixtures = resp;
+        console.log(this.last10Fixtures.response);
       });
     });
   }

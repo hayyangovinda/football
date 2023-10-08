@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FixtureResponse, StandingResponse } from '../models/standing-response';
+import { FixtureResponse, StandingResponse } from '../models/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +14,14 @@ export class FootballApiService {
 
   private apiFixturesUrl =
     'https://v3.football.api-sports.io/fixtures?season=2023&last=10';
+
   private headers = {
     headers: new HttpHeaders({
       'x-rapidapi-host': 'v3.football.api-sports.io',
       'x-rapidapi-key': this.apiKey,
     }),
   };
+
   constructor(private http: HttpClient) {}
 
   getStandings(teamId: string): Observable<StandingResponse> {

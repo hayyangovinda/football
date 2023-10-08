@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StandingResponse, TeamData } from 'src/app/models/standing-response';
+import { StandingResponse } from 'src/app/models/interfaces';
 import { FootballApiService } from 'src/app/services/football-api.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { FootballApiService } from 'src/app/services/football-api.service';
   styleUrls: ['./leaderboard.component.css'],
 })
 export class LeaderboardComponent implements OnInit {
-  teams!: any;
   apiResponse!: StandingResponse;
   teamId!: number;
   countryId!: number;
@@ -22,9 +21,6 @@ export class LeaderboardComponent implements OnInit {
   fetchStandings(id: number) {
     this.footballApiService.getStandings(id.toString()).subscribe((resp) => {
       this.apiResponse = resp;
-      this.teams = this.apiResponse.response[0].league.standings[0];
-
-      console.log(this.apiResponse.response[0].league.standings[0]);
     });
   }
 

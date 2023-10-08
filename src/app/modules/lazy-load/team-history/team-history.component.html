@@ -2,6 +2,7 @@
   <main class="content-card">
     <ng-container *ngIf="last10Fixtures?.response">
       <div class="line-content" *ngFor="let fixture of last10Fixtures.response">
+        <span><img src="" alt=""></span>
         <span class="home">{{ fixture.teams.home.name }} </span>
         <span>{{ fixture.goals.home }}</span>
         <span>-</span>
