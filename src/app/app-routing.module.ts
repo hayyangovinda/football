@@ -13,7 +13,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'team-history',
+    path: 'team-history/:id/:id2',
     loadChildren: () =>
       import('./modules/lazy-load/team-history/team-history.module').then(
         (m) => m.TeamHistoryModule

@@ -1,28 +1,15 @@
 <div class="container">
   <main class="content-card">
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
-    <div class="line-content">
-      <span>liverpool </span> <span>3</span> <span>-</span> <span>0</span>
-      <span>Aston Villa</span>
-    </div>
+    <ng-container *ngIf="last10Fixtures?.response">
+      <div class="line-content" *ngFor="let fixture of last10Fixtures.response">
+        <span>{{ fixture.teams.home.name }} </span>
+        <span>{{ fixture.goals.home }}</span>
+        <span>-</span>
+        <span>{{ fixture.goals.away }}</span>
+        <span>{{ fixture.teams.away.name }}</span>
+      </div>
+    </ng-container>
   </main>
+
+  <button (click)="navigateBack()">Back</button>
 </div>

@@ -3,7 +3,7 @@ import { StandingResponse } from 'src/app/models/standing-response';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -25,7 +25,7 @@ export class HomeComponent {
 
   goToLeaderboard(country: string) {
     this.selectedCountryId = this.teamIds[country];
-    console.log({ country });
+
     this.router.navigate(['/leaderboard', this.selectedCountryId]);
   }
 }

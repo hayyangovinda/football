@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { StandingResponse } from '../models/standing-response';
+import { FixtureResponse, StandingResponse } from '../models/standing-response';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +9,11 @@ import { StandingResponse } from '../models/standing-response';
 export class FootballApiService {
   private apiStandingsUrl =
     'https://v3.football.api-sports.io/standings?season=2023&league=';
-  private apiKey = '06bd6335db01fb0cb458af9ff5406ada';
+
+  private apiKey = '2da8a644f3d5df28aa622e1eb868445f';
 
   private apiFixturesUrl =
-    'https://v3.football.api-sports.io/standings?season=2023&last=10';
+    'https://v3.football.api-sports.io/fixtures?season=2023&last=10';
   private headers = {
     headers: new HttpHeaders({
       'x-rapidapi-host': 'v3.football.api-sports.io',
@@ -28,12 +29,10 @@ export class FootballApiService {
     );
   }
 
-  getLastFixtures(
-    leagueId: string,
-    teamId: string
-  ): Observable<StandingResponse> {
-    return this.http.get<StandingResponse>(
-      this.apiFixturesUrl + `league=${leagueId}&team=${teamId} `
+  getLastFixtures(teamId: string): Observable<FixtureResponse> {
+    return this.http.get<FixtureResponse>(
+      this.apiFixturesUrl + `&team=${teamId}`,
+      this.headers
     );
   }
 }

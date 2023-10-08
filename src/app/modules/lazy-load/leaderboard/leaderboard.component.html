@@ -13,7 +13,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr (click)="goToLastFixtures()" *ngFor="let team of teams; let i = index">
+    <tr
+      (click)="goToLastFixtures(team.team.id)"
+      *ngFor="let team of teams; let i = index"
+    >
       <td>{{ team.rank }}</td>
       <td><img class="logo" [src]="team.team.logo" alt="" /></td>
       <td>{{ team.team.name }}</td>
