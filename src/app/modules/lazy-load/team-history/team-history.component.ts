@@ -32,11 +32,8 @@ export class TeamHistoryComponent implements OnInit {
   }
 
   navigateBack() {
-    console.log('clicked');
     this.router.navigate(['/leaderboard', this.countryId], {
       relativeTo: this.route,
     });
-
-    console.log('navigation triggered');
   }
 }

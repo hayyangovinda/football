@@ -2,11 +2,11 @@
   <main class="content-card">
     <ng-container *ngIf="last10Fixtures?.response">
       <div class="line-content" *ngFor="let fixture of last10Fixtures.response">
-        <span>{{ fixture.teams.home.name }} </span>
+        <span class="home">{{ fixture.teams.home.name }} </span>
         <span>{{ fixture.goals.home }}</span>
         <span>-</span>
         <span>{{ fixture.goals.away }}</span>
-        <span>{{ fixture.teams.away.name }}</span>
+        <span class="away">{{ fixture.teams.away.name }}</span>
       </div>
     </ng-container>
   </main>

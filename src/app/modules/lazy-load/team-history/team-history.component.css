@@ -1,7 +1,7 @@
 .container {
   width: 100vw;
   min-height: 100vh;
-  background-color: rgb(214, 66, 66);
+  background-color: #31504a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,8 +11,9 @@
 .content-card {
   background-color: white;
   width: 60%;
-  min-height: 500px;
+  /* min-height: 500px; */
   border-radius: 15px;
+  padding: 50px;
 }
 
 .line-content {
@@ -20,15 +21,25 @@
   align-items: center;
   justify-content: space-around;
   margin: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
 }
 
 button {
   padding: 10px 35px;
-  background-color: blue;
+  background-color: #aaa;
   color: white;
   font-size: 18px;
   margin: 20px;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.home {
+  width: 150px;
+}
+.away {
+  width: 150px;
 }

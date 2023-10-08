@@ -26,6 +26,6 @@ export class HomeComponent {
   goToLeaderboard(country: string) {
     this.selectedCountryId = this.teamIds[country];
 
-    this.router.navigate(['/leaderboard', this.selectedCountryId]);
+    this.router.navigate(['home/leaderboard', this.selectedCountryId]);
   }
 }

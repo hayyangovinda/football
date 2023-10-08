@@ -11,6 +11,7 @@
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .content-table thead tr {
@@ -38,4 +39,12 @@
 
 .logo {
   width: 25px;
+}
+
+.content-table tbody tr {
+  cursor: pointer;
+}
+
+.content-table tbody tr:hover {
+  background-color: #009879;
 }

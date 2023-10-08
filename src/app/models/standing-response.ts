@@ -13,3 +13,12 @@ export interface FixtureResponse {
     goals: { home: number; away: number };
   }[];
 }
+
+export type TeamData = {
+  team: { id: number; logo: string; name: string };
+
+  all: { win: number; draw: number; lose: number; played: number };
+  rank: number;
+  goalsDiff: number;
+  points: number;
+}[];

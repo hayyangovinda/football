@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { LeaderboardRoutingModule } from './leaderboard-routing.module';
 import { LeaderboardComponent } from './leaderboard.component';
-import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [LeaderboardComponent],
-  imports: [CommonModule, LeaderboardRoutingModule, MaterialModule],
+  imports: [CommonModule, LeaderboardRoutingModule],
   exports: [LeaderboardComponent],
 })
 export class LeaderboardModule {}
