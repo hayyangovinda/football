@@ -24,7 +24,6 @@ export class TeamHistoryComponent implements OnInit {
       this.countryId = params['id2'];
       this.footballApiService.getLastFixtures(teamId).subscribe((resp) => {
         this.last10Fixtures = resp;
-        console.log(this.last10Fixtures.response);
       });
     });
   }
