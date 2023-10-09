@@ -10,7 +10,7 @@ export class FootballApiService {
   private apiStandingsUrl =
     'https://v3.football.api-sports.io/standings?season=2023&league=';
 
-  private apiKey = '052195bd4bf62526bedeb9fae44621ea';
+  private apiKey = '5b4fbeba4388bf787213bb877e5b70d5';
 
   private apiFixturesUrl =
     'https://v3.football.api-sports.io/fixtures?season=2023&last=10';
