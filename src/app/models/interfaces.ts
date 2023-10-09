@@ -24,7 +24,10 @@ export interface StandingResponse {
 export interface FixtureResponse {
   response: {
     league: { standings: [{ team: { id: number } }][] };
-    teams: { home: { name: string }; away: { name: string } };
+    teams: {
+      home: { name: string; logo: string };
+      away: { name: string; logo: string };
+    };
     goals: { home: number; away: number };
   }[];
 }

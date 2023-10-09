@@ -32,10 +32,6 @@ export class LeaderboardComponent implements OnInit {
   }
 
   goToLastFixtures(id: number) {
-    const queryParams = {
-      teamid: id,
-      countryId: this.countryId,
-    };
     this.router.navigate(['home/team-history', id, this.countryId]);
   }
 }

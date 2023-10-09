@@ -30,7 +30,7 @@ export class TeamHistoryComponent implements OnInit {
   }
 
   navigateBack() {
-    this.router.navigate(['/leaderboard', this.countryId], {
+    this.router.navigate(['../../../../home/leaderboard', this.countryId], {
       relativeTo: this.route,
     });
   }

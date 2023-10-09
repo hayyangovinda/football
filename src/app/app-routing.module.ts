@@ -7,14 +7,14 @@ const routes: Routes = [
   {
     path: 'home/leaderboard',
     loadChildren: () =>
-      import('./modules/lazy-load/leaderboard/leaderboard.module').then(
+      import('./modules/pages/leaderboard/leaderboard.module').then(
         (m) => m.LeaderboardModule
       ),
   },
   {
     path: 'home/team-history/:id/:id2',
     loadChildren: () =>
-      import('./modules/lazy-load/team-history/team-history.module').then(
+      import('./modules/pages/team-history/team-history.module').then(
         (m) => m.TeamHistoryModule
       ),
   },
