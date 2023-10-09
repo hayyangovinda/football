@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StandingResponse } from 'src/app/models/interfaces';
+import { StandingResponse, TeamData } from 'src/app/models/interfaces';
 import { FootballApiService } from 'src/app/services/football-api.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class LeaderboardComponent implements OnInit {
   apiResponse!: StandingResponse;
   teamId!: number;
   countryId!: number;
+  teams!: TeamData;
   constructor(
     private footballApiService: FootballApiService,
     private router: Router,
@@ -21,6 +22,9 @@ export class LeaderboardComponent implements OnInit {
   fetchStandings(id: number) {
     this.footballApiService.getStandings(id.toString()).subscribe((resp) => {
       this.apiResponse = resp;
+      if (this.apiResponse.response.length > 0) {
+        this.teams = this.apiResponse.response[0].league.standings[0];
+      }
     });
   }
 

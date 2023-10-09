@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FixtureResponse, StandingResponse } from 'src/app/models/interfaces';
+import { FixtureResponse } from 'src/app/models/interfaces';
 import { FootballApiService } from 'src/app/services/football-api.service';
 
 @Component({

@@ -32,11 +32,11 @@ export interface FixtureResponse {
   }[];
 }
 
-// export type TeamData = {
-//   team: { id: number; logo: string; name: string };
+export type TeamData = {
+  team: { id: number; logo: string; name: string };
 
-//   all: { win: number; draw: number; lose: number; played: number };
-//   rank: number;
-//   goalsDiff: number;
-//   points: number;
-// }[];
+  all: { win: number; draw: number; lose: number; played: number };
+  rank: number;
+  goalsDiff: number;
+  points: number;
+}[];
