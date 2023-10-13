@@ -8,4 +8,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("assets/185419.jpg");
+  background-repeat: repeat;
+  background-size: cover;
 }
